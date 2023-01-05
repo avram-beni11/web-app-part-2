@@ -1,4 +1,9 @@
 {
+    "name": "web-app-part-2",
+    "private": true,
+    "scripts": {
+        "start": "node server.js"
+    },
     "dependencies": {
         "express": "^4.18.2",
         "lodash": "^4.17.21",
