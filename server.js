@@ -8,6 +8,11 @@ const lessons = [
   { id: 3, title: 'Lesson 3' }
 ];
 
+const users = [
+  {email: "user@email.com", password: "mypassword" },
+
+];
+
 app.get('/lessons', (req, res) => {
   // Generate HTML using the lessons array
   const html = `
@@ -17,6 +22,16 @@ app.get('/lessons', (req, res) => {
   `;
 
   // Send the HTML as the response
+  res.send(html);
+});
+
+app.get('/users', (req, res) => {
+
+  const html = `
+    <p>
+      ${lessons.map(lesson => `<li>${lesson.title}</li>`).join('')}
+    </p>
+  `;
   res.send(html);
 });
 
