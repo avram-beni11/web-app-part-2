@@ -3,10 +3,12 @@ const app = express();
 
 // Define the lessons array
 const lessons = [
-  { id: 1, title: 'Lesson 1' },
-  { id: 2, title: 'Lesson 2' },
-  { id: 3, title: 'Lesson 3' }
+  { topic: 'math', location: 'Hendon', price: 100 },
+  { topic: 'math', location: 'Colindale', price: 80 },
+  { topic: 'math', location: "Brent Cross", price: 90 },
+  { topic: 'math', location: 'Golders Green', price: 120 }
 ];
+
 
 const users = [
   {email: "user@email.com", password: "mypassword" },
@@ -17,7 +19,7 @@ app.get('/lessons', (req, res) => {
   // Generate HTML using the lessons array
   const html = `
     <ul>
-      ${lessons.map(lesson => `<li>${lesson.title}</li>`).join('')}
+      ${lessons.map(lesson => `<li>${lesson.topic}</li>`).join('')}
     </ul>
   `;
 
