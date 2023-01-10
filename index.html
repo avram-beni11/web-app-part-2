@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
     <link href="style.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.10/dist/vue.js"></script>
 </head>
+
 <body>
     <div id="app">
         <div class="row">
@@ -15,26 +17,14 @@
                 <ul>
                     <li>topic: {{ lessons.topic }}</li>
                     <li>location: {{ lessons.location }}</li>
-                    <li>price: {{ lessons.price }}</li>
+                    <li>price: £{{ lessons.price }}</li>
                 </ul>
             </div>
         </div>
     </div>
-    <script type="text/javascript">
-        let webstore = new Vue({
-            el: "#app",
-            data: {
-                lessons: []
-            },
-            methods: {
-            },
-            created() {
-                // GET request to fetch lessons and add response to lessons data object
-                fetch("http://localhost:3000/lessons")
-                    .then(response => response.json())
-                    .then(data => (this.lessons = data));
-            }
-        });
+    <script src="vue.js"></script>
+    <script src="server.js"></script>
     </script>
 </body>
+
 </html>
